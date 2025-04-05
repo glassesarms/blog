@@ -1,33 +1,122 @@
 body {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 300;
-    max-width: 700px;
-    margin: 2rem auto;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.6rem;
+  flex: 1 1 auto;
+}
+
+.theme-toggle {
+  all: unset;
+  cursor: pointer;
+  color: var(--link);
+  text-decoration: underline;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+.theme-toggle:hover {
+  color: var(--link-hover);
+}
+
+.post-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.post-link {
+  margin-bottom: 0.75rem;
+}
+
+.post-link a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  color: var(--link);
+  border-bottom: 1px solid var(--link);
+  padding-bottom: 0.2rem;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.post-link a:hover {
+  color: var(--link-hover);
+  border-color: var(--link-hover);
+}
+
+.post-title {
+  font-weight: 400;
+}
+
+.post-date {
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+ul {
+  list-style: none;
+  padding-left: 1.5rem;
+}
+
+a {
+  color: var(--link);
+  text-decoration: underline;
+}
+
+a:hover {
+  color: var(--link-hover);
+}
+
+article {
+  margin-top: 2rem;
+}
+
+/* Optional: Better spacing on small screens */
+@media (max-width: 480px) {
+  body {
+    margin: 1rem auto;
     padding: 0 1rem;
-    color: #333;
-    background: #fff;
   }
-  
-  h1 {
-    font-weight: 600;
-    font-size: 2rem;
-    margin-bottom: 1rem;
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
   }
-  
-  ul {
-    list-style: disc;
-    padding-left: 1.5rem;
+
+  header h1 {
+    font-size: 1.4rem;
   }
-  
-  a {
-    color: #0077cc;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    text-decoration: underline;
-  }
-  
-  article {
-    margin-top: 2rem;
-  }  
+}
+
+html {
+  --bg: #ececec;
+  --text: #161616;
+  --link: #604805;
+  --link-hover: #382400;
+}
+
+html.dark {
+  --bg: #181818;
+  --text: #e0e0e0;
+  --link: #66b2ff;
+  --link-hover: #88c8ff;
+}
