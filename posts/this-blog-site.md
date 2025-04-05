@@ -1,6 +1,6 @@
 05-04-2025
 # this site
-I'm writing this site in as close to vanilla JS as is convientent. The majority of the javascript is in the build file. The basic idea is that all of my blog posts are stored as markdown files in this blog's repository. Whenever `build.js` is ran, it converts all posts into html files using a `post.html` template with slug being the name of the file.
+I'm writing this site in as close to vanilla JS as is convenient. The majority of the javascript is in the build file. The basic idea is that all of my blog posts are stored as markdown files in this blog's repository. Whenever `build.js` is ran, it converts all posts into html files using a `post.html` template with slug being the name of the file.
 
 The build file will then create an index page, also from a template: `index.html` (who would have guessed). It fills a `<ul>` with the titles and dates of each of the posts that it has collated.
 
