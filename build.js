@@ -27,6 +27,7 @@ posts.forEach(file => {
     const slug = file.replace(".md", "");
     const finalHtml = template
         .replace(/{{title}}/g, title)
+        .replace(/{{date}}/g, date)
         .replace("{{content}}", htmlContent);
     
     fs.writeFileSync(path.join(distDir, `${slug}.html`), finalHtml);
