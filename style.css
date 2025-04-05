@@ -1,0 +1,33 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    color: #333;
+    background: #fff;
+  }
+  
+  h1 {
+    font-weight: 600;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+  }
+  
+  a {
+    color: #0077cc;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  article {
+    margin-top: 2rem;
+  }  

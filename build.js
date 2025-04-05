@@ -42,6 +42,7 @@ const indexHtml = `
   <meta charset="UTF-8">
   <title>glass arms</title>
   <link rel="stylesheet" href="/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
   <main>
