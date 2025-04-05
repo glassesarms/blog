@@ -24,7 +24,7 @@ const indexHtml = indexTemplate.replace("{{postList}}", indexLinks);
 
 I've tried to keep the styling minimal, I think I like how the site looks, but I don't want to spend a large amount of time tweaking it or doing something wild, I'd just like to make posts on here every now and then and not have to worry about it. 
 
-The only other slightly interesting piece of code in this site is the themeing, I'm sure this is nothing groundbreaking but normally this kinda stuff is handled for my by NextJS. I have two scripts; `theme-detector.js` and `theme-toggle.js`. The detector is injected at the top of each of the templates and check the browser's local storage to see if a theme preference is present.
+The only other slightly interesting piece of code in this site is the themeing, I'm sure this is nothing groundbreaking but normally this kinda stuff is handled for me by NextJS. I have two scripts; `theme-detector.js` and `theme-toggle.js`. The detector is injected at the top of each of the templates and check the browser's local storage to see if a theme preference is present.
 ``` javascript
 //theme-detector.js
 (function () {
