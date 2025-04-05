@@ -19,7 +19,10 @@ posts.forEach(file => {
     const date = lines[0].trim();
     const title = lines.find(line => line.startsWith("# "))?.replace("# ", "").trim() || "Untitled";
 
-    const htmlContent = marked.parse(markdown);
+    const contentLines = lines.slice(2);
+    const cleanedMarkdown = contentLines.join("\n").trim();
+
+    const htmlContent = marked.parse(cleanedMarkdown);
 
     const slug = file.replace(".md", "");
     const finalHtml = template
