@@ -54,6 +54,35 @@ pre code {
   white-space: nowrap;
 }
 
+/* tooltip to be rude to americans*/
+.date-wrapper, .date {
+  position: relative;
+  cursor: help;
+}
+
+.date::after {
+  content: "I'm not a yank, dd-mm-yyyy";
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--bg);
+  color: var(--text);
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 10;
+}
+
+.date:hover::after {
+  opacity: 1;
+}
+
+
 .theme-toggle:hover {
   color: var(--link-hover);
 }

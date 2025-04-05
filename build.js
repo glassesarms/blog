@@ -67,7 +67,7 @@ postData.forEach(({ title, date, slug, htmlContent }) => {
       <li class="post-link">
         <a href="${slug}.html">
           <span class="post-title">${title}</span>
-          <span class="post-date">${date}</span>
+          <span class="post-date date">${date}</span>
         </a>
       </li>
   `;
