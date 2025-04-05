@@ -24,6 +24,25 @@ header h1 {
   flex: 1 1 auto;
 }
 
+header button {
+  margin-bottom: 1rem;
+}
+
+pre {
+  overflow-x: auto;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+pre code {
+  display: block;
+  padding: 1rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  white-space: pre;
+}
+
 /* theming */
 .theme-toggle {
   all: unset;
@@ -90,6 +109,10 @@ a:hover {
 
 article {
   margin-top: 2rem;
+  margin-bottom: 2rem;
+  text-align: justify;
+  text-justify: inter-word;
+  font-size:  small;
 }
 
 @media (max-width: 480px) {

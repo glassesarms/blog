@@ -1,6 +1,20 @@
 const fs = require("fs");
 const path = require("path");
-const marked = require("marked");
+const { marked } = require("marked");
+const hljs = require("highlight.js");
+const { markedHighlight } = require("marked-highlight");
+
+// Add marked-highlight middleware
+marked.use(
+  markedHighlight({
+    highlight(code, lang) {
+      if (lang && hljs.getLanguage(lang)) {
+        return hljs.highlight(code, { language: lang }).value;
+      }
+      return hljs.highlightAuto(code).value;
+    },
+  })
+);
 
 const postsDir = path.join(__dirname, "posts");
 const distDir = path.join(__dirname, "dist");
@@ -11,6 +25,7 @@ if (!fs.existsSync(distDir)) fs.mkdirSync(distDir);
 const posts = fs.readdirSync(postsDir);
 
 let indexLinks = "";
+const postData = [];
 
 posts.forEach((file) => {
   const markdown = fs.readFileSync(path.join(postsDir, file), "utf8");
@@ -29,6 +44,18 @@ posts.forEach((file) => {
   const htmlContent = marked.parse(cleanedMarkdown);
 
   const slug = file.replace(".md", "");
+
+  postData.push({
+    title,
+    date,
+    slug,
+    htmlContent,
+  });
+});
+
+postData.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+postData.forEach(({ title, date, slug, htmlContent }) => {
   const finalHtml = template
     .replace(/{{title}}/g, title)
     .replace(/{{date}}/g, date)
