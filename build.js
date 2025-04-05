@@ -53,7 +53,12 @@ posts.forEach((file) => {
   });
 });
 
-postData.sort((a, b) => new Date(b.date) - new Date(a.date));
+function parseDate(dateStr) {
+  const [dd, mm, yyyy] = dateStr.split("-");
+  return new Date(`${yyyy}-${mm}-${dd}`);
+}
+
+postData.sort((a, b) => parseDate(b.date) - parseDate(a.date));
 
 postData.forEach(({ title, date, slug, htmlContent }) => {
   const finalHtml = template
