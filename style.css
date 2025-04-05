@@ -24,6 +24,7 @@ header h1 {
   flex: 1 1 auto;
 }
 
+/* theming */
 .theme-toggle {
   all: unset;
   cursor: pointer;
@@ -37,6 +38,7 @@ header h1 {
   color: var(--link-hover);
 }
 
+/* post lists */
 .post-list {
   list-style: none;
   padding: 0;
@@ -90,16 +92,10 @@ article {
   margin-top: 2rem;
 }
 
-/* Optional: Better spacing on small screens */
 @media (max-width: 480px) {
   body {
     margin: 1rem auto;
     padding: 0 1rem;
-  }
-
-  header {
-    flex-direction: column;
-    align-items: flex-start;
   }
 
   header h1 {
